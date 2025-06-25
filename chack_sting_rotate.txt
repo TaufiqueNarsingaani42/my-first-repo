@@ -1,0 +1,54 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<stdbool.h>
+void remove_newline(char *str){
+    int len = strlen(str);
+    if((len>0) && (str[len-1]=='\n')){
+        str[len-1] = '\0';
+        len--;
+    }
+}
+bool checkstr_rotate(char *str1,char *str2,int size1,int size2){
+    char temp[100*2];
+    bool result;
+    strcpy(temp,str1);
+    strcat(temp,str1);
+    if(strlen(str1)!=strlen(str2)){
+        result = false;
+    }else{
+        if(strstr(temp,str2)){
+            result = true;
+        }else{
+            result = false;
+        }
+    }
+    return result;
+}
+int main()
+{
+    char *str1,*str2;
+    int size1,size2;
+    bool result;
+    printf("enter both the size of an array\n");
+    scanf("%d%d",&size1,&size2);
+    str1 = (char *)calloc(size1 , sizeof(char));
+    str2 = (char *)calloc(size2 , sizeof(char));
+    while(getchar()!='\n');
+    printf("enter both the strings\n");
+    fgets(str1,size1,stdin);
+    fgets(str2,size2,stdin);
+    remove_newline(str1);
+    remove_newline(str2);
+    result = checkstr_rotate(str1,str2,size1,size2);
+    printf("result is : %s",result ? "true" : "false");
+    return 0;
+}
