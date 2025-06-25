@@ -1,0 +1,40 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include<stdint.h>
+#include<string.h>
+void factorial(uint32_t u32_arr[], uint32_t u32_n){
+     uint32_t u32_res[u32_n],u32_i;
+     int s32_j;
+      // Initialize result array to 1
+    for (u32_i = 0; u32_i < u32_n; u32_i++) {
+        u32_res[u32_i] = 1;
+    }
+     for(u32_i=0;u32_i<u32_n;u32_i++){
+         for(s32_j=u32_arr[u32_i];s32_j>=0;s32_j--){
+             if(s32_j ==0){
+                 u32_res[u32_i] *= 1;
+             }else{
+                 u32_res[u32_i] *= s32_j;  
+             }
+         }
+     }
+     printf("factiorial is \n");
+     for(u32_i=0;u32_i<u32_n;u32_i++){
+         printf("%d, ",u32_res[u32_i]);
+     }
+}
+int main()
+{
+    uint32_t u32_arr[] = {5, 6, 3};
+    uint32_t u32_n =((sizeof(u32_arr)) / (sizeof(u32_arr[0])));
+    factorial(u32_arr,u32_n);
+    
+    return 0;
+}
