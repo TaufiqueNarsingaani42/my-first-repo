@@ -10,6 +10,7 @@ Write your code in this editor and press "Run" button to compile and execute it.
 #include<stdlib.h>
 #include<string.h>
 #include<stdbool.h>
+// these function is to remove new line character
 void remove_newline(char *str){
     int len;
     len = strlen(str);
@@ -18,6 +19,7 @@ void remove_newline(char *str){
         len--;
     }
 }
+// these function is to check string rotate
 bool checkstr_rotate(char *str1,char *str2,int size1,int size2){
     char temp[100*2];
     bool result;
@@ -34,6 +36,7 @@ bool checkstr_rotate(char *str1,char *str2,int size1,int size2){
     }
     return result;
 }
+// these is the main function
 int main()
 {
     char *str1,*str2;
