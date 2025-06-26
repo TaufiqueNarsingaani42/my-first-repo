@@ -1,0 +1,32 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include<stdint.h>
+void jump_game(uint32_t u32_arr[],uint32_t u32_n){
+    uint32_t u32_i;
+    for(u32_i=0;u32_i<u32_n;){
+        if(u32_arr[u32_i] == 0){
+            printf("false\n");
+            break;
+        }else{
+            u32_i += u32_arr[u32_i];
+        }
+    }
+    if(u32_i>=u32_n){
+        printf("true\n");
+    }
+}
+int main()
+{
+    uint32_t u32_arr[]={1,2,0,3,0,0};
+    uint32_t u32_n = ((sizeof(u32_arr)) / (sizeof(u32_arr[0])));
+    jump_game(u32_arr,u32_n);
+    
+    return 0;
+}
