@@ -1,0 +1,27 @@
+'''
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+'''
+#-- user defined function
+def ele_sim(arr1,arr2):
+   i = 0 
+   j = 0
+   arr3 = []
+   for i in arr1:
+        count = 0
+        for j in arr2:
+            if i == j:
+              count+=1
+        if count == 0:
+           arr3.append(i)
+   return arr3
+#-- main function ---- 
+arr1 = [1,2,3,4,5,10]
+arr2 = [2,3,1,0,5]
+result = ele_sim(arr1,arr2)
+print(f"result is : {result}")
+
